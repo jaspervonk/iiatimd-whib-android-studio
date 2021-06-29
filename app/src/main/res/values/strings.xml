@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">WHIB</string>
+
+    <string name="button_continue">Continue</string>
+
+    <string name="welcome_text">Welcome to WHIB!</string>
+    <string name="welcome_greeting">Hello!</string>
+    <string name="welcome_message">So, where have you been?</string>
+
+    <string name="test_text">You have reached the test page :D</string>
 </resources>
