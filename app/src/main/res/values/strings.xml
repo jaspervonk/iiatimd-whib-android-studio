@@ -2,6 +2,8 @@
     <string name="app_name">WHIB</string>
 
     <string name="button_continue">Continue</string>
+    <string name="button_whereabouts">Whereabouts</string>
+    <string name="button_reminders">Reminders</string>
 
     <string name="welcome_text">Welcome to WHIB!</string>
     <string name="welcome_greeting">Hello!</string>
