@@ -6,11 +6,11 @@
     android:layout_height="match_parent">
 
     <include
-        android:id="@+id/include2"
+        android:id="@+id/actionbar_home_activity"
         layout="@layout/actionbar_home" />
 
     <Button
-        android:id="@+id/toMyWhereaboutsScreenButton"
+        android:id="@+id/toWhereaboutsSceenButton"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginHorizontal="30dp"
@@ -24,10 +24,10 @@
         app:backgroundTint="@color/yellow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include2" />
+        app:layout_constraintTop_toBottomOf="@+id/actionbar_home_activity" />
 
     <Button
-        android:id="@+id/toMyRemindersScreenButton"
+        android:id="@+id/toRemindersScreenButton"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginHorizontal="30dp"
@@ -41,6 +41,6 @@
         app:backgroundTint="@color/yellow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toMyWhereaboutsScreenButton" />
+        app:layout_constraintTop_toBottomOf="@+id/toWhereaboutsSceenButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

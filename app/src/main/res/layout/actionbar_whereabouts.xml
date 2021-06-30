@@ -23,10 +23,18 @@
             android:layout_toRightOf="@id/actionbarBackButton"
             android:layout_marginLeft="5dp"
             android:layout_marginStart="5dp"
-            android:text="Placeholder"
-            android:textColor="@color/black"
+            android:text="@string/whereabouts_title"
+            android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/actionbarAddButton"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/ic_add" />
 
     </RelativeLayout>
 
