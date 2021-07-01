@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <include
-        android:id="@+id/include"
+        android:id="@+id/actionbar_test_activity"
         layout="@layout/actionbar_default" />
 
     <TextView

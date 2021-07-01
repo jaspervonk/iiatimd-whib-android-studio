@@ -2,6 +2,7 @@ package com.example.whib;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -15,23 +16,23 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_home);
 
         // Set OnClickListener
-        Button toMyWhereaboutsScreenButton = findViewById(R.id.toMyWhereaboutsScreenButton);
-        toMyWhereaboutsScreenButton.setOnClickListener(this);
+        Button toWhereaboutsScreenButton = findViewById(R.id.toWhereaboutsSceenButton);
+        toWhereaboutsScreenButton.setOnClickListener(this);
 
-        Button toMyRemindersScreenButton = findViewById(R.id.toMyRemindersScreenButton);
-        toMyRemindersScreenButton.setOnClickListener(this);
+        Button toRemindersScreenButton = findViewById(R.id.toRemindersScreenButton);
+        toRemindersScreenButton.setOnClickListener(this);
     }
 
     public void onClick(View v) {
         // Check what button is pressed; Change activity accordingly
         switch(v.getId()) {
-            case R.id.toMyWhereaboutsScreenButton:
-                Intent toMyWhereaboutsScreenIntent = new Intent(this, TestActivity.class);
-                startActivity(toMyWhereaboutsScreenIntent);
+            case R.id.toWhereaboutsSceenButton:
+                Intent toWhereaboutsScreenIntent = new Intent(this, WhereaboutsActivity.class);
+                startActivity(toWhereaboutsScreenIntent);
                 break;
-            case R.id.toMyRemindersScreenButton:
-                Intent toMyRemindersScreenIntent = new Intent(this, RemindersActivity.class);
-                startActivity(toMyRemindersScreenIntent);
+            case R.id.toRemindersScreenButton:
+                Intent toRemindersScreenIntent = new Intent(this, RemindersActivity.class);
+                startActivity(toRemindersScreenIntent);
                 break;
         }
     }
