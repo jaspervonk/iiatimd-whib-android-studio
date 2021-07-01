@@ -46,7 +46,7 @@ public class WhereaboutsActivity extends AppCompatActivity implements View.OnCli
             whereabouts[i] = "Whereabout " + i;
         }
 
-        // Make recyclerViewAdapter using the whereabouts Data
+        // Make recyclerViewAdapter using the Whereabouts Data
         recyclerViewAdapter = new WhereaboutAdapter(whereabouts);
         recyclerView.setAdapter(recyclerViewAdapter);
     }
