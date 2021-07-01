@@ -2,7 +2,6 @@ package com.example.whib;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -40,13 +39,15 @@ public class WhereaboutsActivity extends AppCompatActivity implements View.OnCli
         recyclerView.hasFixedSize();
 
         // Make Whereabouts data
-        String[] whereabouts = new String[200]; //0..199;
+        Whereabout[] whereabouts = new Whereabout[5]; //0..x-1;
 
-        for(int i=0; i < 200; i++){
-            whereabouts[i] = "Whereabout " + i;
-        }
+        whereabouts[0] = new Whereabout(1,"Attack on titan", 4,"Eren just killed titan, Levi came to the rescue!", "Gogoanime", "5", "Series");
+        whereabouts[1] = new Whereabout(2,"Dolfje", 1, "He just ate a chicken from one of the other people and they got mad", "", "124", "Book");
+        whereabouts[2] = new Whereabout(3,"Kakegurui", 2, "They just finished playing with a finger guillotine", "Netflix", "2", "Series");
+        whereabouts[3] = new Whereabout(4,"Hunger Games", 2,"Eric just got killed, 4 people remaining","Netflix", "1:45:16", "Movie");
+        whereabouts[4] = new Whereabout(5,"Hunger Games", 3,"Looks interesting", "Netflix", "", "Movie");
 
-        // Make recyclerViewAdapter using the whereabouts Data
+        // Make recyclerViewAdapter using the Whereabouts Data
         recyclerViewAdapter = new WhereaboutAdapter(whereabouts);
         recyclerView.setAdapter(recyclerViewAdapter);
     }
