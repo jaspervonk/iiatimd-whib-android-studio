@@ -20,6 +20,7 @@
         <activity android:name=".WhereaboutsActivity" />
         <activity android:name=".AddWhereaboutActivity" />
         <activity android:name=".RemindersActivity" />
+        <activity android:name=".AddReminderActivity" />
         <activity android:name=".TestActivity" />
     </application>
 
