@@ -6,9 +6,9 @@ public class Reminder {
 
     private String title;
     private String description;
-    private Date date;
+    private String date;
 
-    public Reminder(String title, String description, Date date) {
+    public Reminder(String title, String description, String date) {
         this.title = title;
         this.description = description;
         this.date = date;
@@ -22,7 +22,7 @@ public class Reminder {
         return this.description;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return this.date;
     }
 }

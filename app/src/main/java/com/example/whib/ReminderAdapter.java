@@ -1,6 +1,5 @@
 package com.example.whib;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,18 +10,22 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.ReminderViewHolder> {
-    private String[] reminders;
+    private Reminder[] reminders;
 
-    public ReminderAdapter(String[] reminders) {
+    public ReminderAdapter(Reminder[] reminders) {
         this.reminders = reminders;
     }
 
     public static class ReminderViewHolder extends RecyclerView.ViewHolder {
-        public TextView textView;
+        public TextView reminderCardTitle;
+        public TextView reminderCardDescription;
+        public TextView reminderCardConcurrence;
 
         public ReminderViewHolder(View v) {
             super(v);
-            textView = v.findViewById(R.id.textView2);
+            reminderCardTitle = v.findViewById(R.id.reminderCardTitle);
+            reminderCardDescription = v.findViewById(R.id.reminderCardDescription);
+            reminderCardConcurrence = v.findViewById(R.id.reminderCardConcurrence);
         }
     }
 
@@ -36,8 +39,9 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.Remind
 
     @Override
     public void onBindViewHolder(@NonNull ReminderViewHolder holder, int position) {
-        Log.d("reminderPosition", reminders[position]);
-        holder.textView.setText(reminders[position]);
+        holder.reminderCardTitle.setText(reminders[position].getTitle());
+        holder.reminderCardDescription.setText(reminders[position].getDescription());
+        holder.reminderCardConcurrence.setText(reminders[position].getDate());
     }
 
     @Override

@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,7 +30,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(toMyWhereaboutsScreenIntent);
                 break;
             case R.id.toMyRemindersScreenButton:
-                Intent toMyRemindersScreenIntent = new Intent(this, TestActivity.class);
+                Intent toMyRemindersScreenIntent = new Intent(this, RemindersActivity.class);
                 startActivity(toMyRemindersScreenIntent);
                 break;
         }

@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MyRemindersActivity extends AppCompatActivity implements View.OnClickListener{
+public class RemindersActivity extends AppCompatActivity implements View.OnClickListener {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter recyclerViewAdapter;
@@ -16,17 +16,20 @@ public class MyRemindersActivity extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
-        setContentView(R.layout.activity_my_reminders);
+        setContentView(R.layout.activity_reminders);
 
         recyclerView = findViewById(R.id.remindersRecyclerView);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.hasFixedSize();
 
-        String[] reminders = new String[200];
-        for(int i = 0; i < 200; i++) {
-            reminders[i] = "Reminder" + i;
-        }
+//        String[] reminders = new String[200];
+//        for(int i = 0; i < 200; i++) {
+//            reminders[i] = "Reminder" + i;
+//        }
+
+        Reminder[] reminders = new Reminder[1];
+        reminders[0] = new Reminder("New episode aot", "Season 4 new episode", "Friday");
 
         recyclerViewAdapter = new ReminderAdapter(reminders);
         recyclerView.setAdapter(recyclerViewAdapter);
