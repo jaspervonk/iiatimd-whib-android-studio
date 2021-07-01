@@ -29,12 +29,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         // Check what button is pressed; Change activity accordingly
         switch(v.getId()) {
             case R.id.toWhereaboutsSceenButton:
-                Intent toMyWhereaboutsScreenIntent = new Intent(this, WhereaboutsActivity.class);
-                startActivity(toMyWhereaboutsScreenIntent);
+                Intent toWhereaboutsScreenIntent = new Intent(this, WhereaboutsActivity.class);
+                startActivity(toWhereaboutsScreenIntent);
                 break;
             case R.id.toRemindersScreenButton:
-                Intent toMyRemindersScreenIntent = new Intent(this, TestActivity.class);
-                startActivity(toMyRemindersScreenIntent);
+                Intent toRemindersScreenIntent = new Intent(this, TestActivity.class);
+                startActivity(toRemindersScreenIntent);
                 break;
         }
     }

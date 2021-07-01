@@ -8,8 +8,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class WhereaboutsActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+    private RecyclerView.Adapter recyclerViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +32,23 @@ public class WhereaboutsActivity extends AppCompatActivity implements View.OnCli
 
         ImageView toAddWhereaboutScreenButton = findViewById(R.id.actionbarAddButton);
         toAddWhereaboutScreenButton.setOnClickListener(this);
+
+        // Set WhereaboutsRecyclerView
+        recyclerView = findViewById(R.id.whereaboutsRecyclerView);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.hasFixedSize();
+
+        // Make Whereabouts data
+        String[] whereabouts = new String[200]; //0..199;
+
+        for(int i=0; i < 200; i++){
+            whereabouts[i] = "Whereabout " + i;
+        }
+
+        // Make recyclerViewAdapter using the whereabouts Data
+        recyclerViewAdapter = new WhereaboutAdapter(whereabouts);
+        recyclerView.setAdapter(recyclerViewAdapter);
     }
 
     public void onClick(View v) {
@@ -35,7 +58,7 @@ public class WhereaboutsActivity extends AppCompatActivity implements View.OnCli
                 onBackPressed();
                 break;
             case R.id.actionbarAddButton:
-                Intent toAddWhereaboutScreenIntent = new Intent(this, TestActivity.class);
+                Intent toAddWhereaboutScreenIntent = new Intent(this, AddWhereaboutActivity.class);
                 startActivity(toAddWhereaboutScreenIntent);
                 break;
         }
