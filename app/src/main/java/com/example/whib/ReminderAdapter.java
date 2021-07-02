@@ -9,10 +9,12 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.ReminderViewHolder> {
-    private Reminder[] reminders;
+import java.util.List;
 
-    public ReminderAdapter(Reminder[] reminders) {
+public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.ReminderViewHolder> {
+    private List<Reminder> reminders;
+
+    public ReminderAdapter(List<Reminder> reminders) {
         this.reminders = reminders;
     }
 
@@ -39,14 +41,14 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.Remind
 
     @Override
     public void onBindViewHolder(@NonNull ReminderViewHolder holder, int position) {
-        holder.reminderCardTitle.setText(reminders[position].getTitle());
-        holder.reminderCardDescription.setText(reminders[position].getDescription());
-        holder.reminderCardConcurrence.setText(reminders[position].getDate());
+        holder.reminderCardTitle.setText(reminders.get(position).getTitle());
+        holder.reminderCardDescription.setText(reminders.get(position).getDescription());
+        holder.reminderCardConcurrence.setText(reminders.get(position).getDate());
     }
 
     @Override
     public int getItemCount() {
-        return reminders.length;
+        return reminders.size();
     }
 
 }

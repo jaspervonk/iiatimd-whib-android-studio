@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey;
 public class Reminder {
 
     @PrimaryKey
-    private int uid;
+    private int uuid;
 
     @ColumnInfo
     private String title;
@@ -19,15 +19,15 @@ public class Reminder {
     @ColumnInfo
     private String date;
 
-    public Reminder(int uid, String title, String description, String date) {
-        this.uid = uid;
+    public Reminder(int uuid, String title, String description, String date) {
+        this.uuid = uuid;
         this.title = title;
         this.description = description;
         this.date = date;
     }
 
-    public int getUid() {
-        return this.uid;
+    public int getUuid() {
+        return this.uuid;
     }
 
     public String getTitle() {

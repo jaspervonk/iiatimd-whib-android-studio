@@ -2,6 +2,7 @@ package com.example.whib;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -10,6 +11,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
+
+import java.util.List;
 
 public class RemindersActivity extends AppCompatActivity implements View.OnClickListener {
     private RecyclerView recyclerView;
@@ -38,15 +42,17 @@ public class RemindersActivity extends AppCompatActivity implements View.OnClick
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.hasFixedSize();
 
+        // Start a thread that makes the RecyclerViewAdapter with database data
+        AppDatabase db = AppDatabase.getInstance(getApplicationContext());
+        new Thread(new GetRemindersTask(db, recyclerView)).start();
+
         // Make Reminders data
-        Reminder[] reminders = new Reminder[2];
-        reminders[0] = new Reminder(0,"New episode aot", "Season 4 new episode", "Friday");
-        reminders[1] = new Reminder(1,"New episode demon slayer", "Season 2 new episode", "Thursday");
+        Reminder[] remindersArray = new Reminder[2];
+        remindersArray[0] = new Reminder(0,"New episode aot", "Season 4 new episode", "Friday");
+        remindersArray[1] = new Reminder(1,"New episode demon slayer", "Season 2 new episode", "Thursday");
 
-        // Make recyclerViewAdapter using the Reminders Data
-        recyclerViewAdapter = new ReminderAdapter(reminders);
-        recyclerView.setAdapter(recyclerViewAdapter);
-
+        // Start a thread that adds the reminders to the database from the remindersArray
+        new Thread(new InsertRemindersTask(db, remindersArray)).start();
     }
 
     public void onClick(View v) {
