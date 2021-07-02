@@ -47,12 +47,12 @@ public class RemindersActivity extends AppCompatActivity implements View.OnClick
         new Thread(new GetRemindersTask(db, recyclerView)).start();
 
         // Make Reminders data
-        Reminder[] remindersArray = new Reminder[2];
+        Reminder[] remindersArray = new Reminder[2]; //0..x-1;
         remindersArray[0] = new Reminder(0,"New episode aot", "Season 4 new episode", "Friday");
         remindersArray[1] = new Reminder(1,"New episode demon slayer", "Season 2 new episode", "Thursday");
 
         // Start a thread that adds the reminders to the database from the remindersArray
-        new Thread(new InsertRemindersTask(db, remindersArray)).start();
+//        new Thread(new InsertRemindersTask(db, remindersArray)).start();
     }
 
     public void onClick(View v) {

@@ -6,14 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class GetRemindersTask implements Runnable {
+public class GetWhereaboutsTask implements Runnable {
     private RecyclerView.Adapter recyclerViewAdapter;
 
     AppDatabase db;
-    List<Reminder> reminders;
+    List<Whereabout> whereabouts;
     RecyclerView recyclerView;
 
-    public GetRemindersTask(AppDatabase db, RecyclerView recyclerView) {
+    public GetWhereaboutsTask(AppDatabase db, RecyclerView recyclerView) {
         this.db = db;
         this.recyclerView = recyclerView;
     }
@@ -21,11 +21,11 @@ public class GetRemindersTask implements Runnable {
     @Override
     public void run() {
         // Get all reminders from DAO
-        this.reminders = db.reminderDAO().getAll();
-        Log.d("reminderTask", "" + this.reminders.size());
+        this.whereabouts = db.whereaboutDAO().getAll();
+        Log.d("whereaboutTask", "" + this.whereabouts.size());
 
         // Make recyclerViewAdapter using the database Data
-        recyclerViewAdapter = new ReminderAdapter(this.reminders);
+        recyclerViewAdapter = new WhereaboutAdapter(this.whereabouts);
         recyclerView.setAdapter(recyclerViewAdapter);
     }
 }

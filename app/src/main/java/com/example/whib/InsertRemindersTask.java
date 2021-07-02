@@ -15,7 +15,6 @@ public class InsertRemindersTask implements Runnable{
     public void run() {
         for(int i = 0; i < reminders.length; i++) {
             db.reminderDAO().InsertReminder(this.reminders[i]);
-            String title = db.reminderDAO().getAll().get(i).getTitle();
         }
     }
 }

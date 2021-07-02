@@ -14,7 +14,5 @@ public class InsertReminderTask implements Runnable {
     @Override
     public void run() {
         db.reminderDAO().InsertReminder(this.reminder);
-        String title = db.reminderDAO().getAll().get(0).getTitle();
-        Log.d("InsertReminderTask", title);
     }
 }

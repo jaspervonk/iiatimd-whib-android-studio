@@ -8,15 +8,15 @@ import androidx.room.Query;
 import java.util.List;
 
 @Dao
-public interface ReminderDAO {
+public interface WhereaboutDAO {
 
-    @Query("SELECT * FROM reminder")
-    List<Reminder> getAll();
+    @Query("SELECT * FROM whereabout")
+    List<Whereabout> getAll();
 
     @Insert
-    void InsertReminder(Reminder reminder);
+    void InsertReminder(Whereabout whereabout);
 
     @Delete
-    void delete(Reminder reminder);
+    void delete(Whereabout whereabout);
 
 }
