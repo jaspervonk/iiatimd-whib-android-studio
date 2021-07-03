@@ -61,7 +61,8 @@ public class RemindersActivity extends AppCompatActivity implements View.OnClick
         // Check what button is pressed; Change activity accordingly
         switch(v.getId()) {
             case R.id.actionbarBackButton:
-                onBackPressed();
+                Intent toHomeScreenIntent = new Intent(this, HomeActivity.class);
+                startActivity(toHomeScreenIntent);
                 break;
             case R.id.actionbarAddButton:
                 Intent toAddReminderScreenIntent = new Intent(this, AddReminderActivity.class);

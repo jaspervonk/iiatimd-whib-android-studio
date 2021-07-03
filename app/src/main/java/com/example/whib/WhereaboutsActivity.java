@@ -58,7 +58,8 @@ public class WhereaboutsActivity extends AppCompatActivity implements View.OnCli
         // Check what button is pressed; Change activity accordingly
         switch(v.getId()) {
             case R.id.actionbarBackButton:
-                onBackPressed();
+                Intent toHomeScreenIntent = new Intent(this, HomeActivity.class);
+                startActivity(toHomeScreenIntent);
                 break;
             case R.id.actionbarAddButton:
                 Intent toAddWhereaboutScreenIntent = new Intent(this, AddWhereaboutActivity.class);
