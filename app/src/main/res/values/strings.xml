@@ -10,6 +10,22 @@
     <string name="welcome_message">So, where have you been?</string>
 
     <string name="whereabouts_title">Whereabouts</string>
+
+
+    <string name="detail_whereabout_title">Details</string>
+    <string name="detail_whereabout_title_title">Title</string>
+    <string name="detail_whereabout_part_series">Season</string>
+    <string name="detail_whereabout_part_movie">Part</string>
+    <string name="detail_whereabout_part_book">Part</string>
+    <string name="detail_whereabout_progress_series">Episode</string>
+    <string name="detail_whereabout_progress_movie">Timestamp</string>
+    <string name="detail_whereabout_progress_book">Page</string>
+    <string name="detail_whereabout_source_title">Source</string>
+    <string name="detail_whereabout_note_title">Note</string>
+
+
+
+    <string name="add_whereabout_actionbar_title">Add whereabout</string>
     <string-array name="add_whereabout_spinner_default">
         <item>Select your whereabout...</item>
         <item>Series</item>

@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".HomeActivity" />
         <activity android:name=".WhereaboutsActivity" />
+        <activity android:name=".WhereaboutDetailActivity" />
         <activity android:name=".AddWhereaboutActivity" />
         <activity android:name=".RemindersActivity" />
         <activity android:name=".AddReminderActivity" />

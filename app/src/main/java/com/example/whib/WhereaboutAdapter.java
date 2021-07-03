@@ -1,5 +1,7 @@
 package com.example.whib;
 
+import android.content.Context;
+import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,13 +11,14 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.w3c.dom.Text;
 
 import java.util.List;
 
-public class WhereaboutAdapter extends RecyclerView.Adapter<WhereaboutAdapter.WhereaboutViewHolder> {
+public class WhereaboutAdapter extends RecyclerView.Adapter<WhereaboutAdapter.WhereaboutViewHolder> implements View.OnClickListener {
 
     // Define whereabouts array
     private List<Whereabout> whereabouts;
@@ -25,9 +28,15 @@ public class WhereaboutAdapter extends RecyclerView.Adapter<WhereaboutAdapter.Wh
         this.whereabouts = whereabouts;
     }
 
+    @Override
+    public void onClick(View v) {
+
+    }
+
     public static class WhereaboutViewHolder extends RecyclerView.ViewHolder {
 
         // Define all layout components that are able to be altered
+        public ConstraintLayout whereaboutCard;
         public TextView whereaboutCardTitle;
         public TextView whereaboutCardProgress;
         public TextView whereaboutCardNote;
@@ -36,6 +45,7 @@ public class WhereaboutAdapter extends RecyclerView.Adapter<WhereaboutAdapter.Wh
             super(v);
 
             // When making a new WhereAboutViewHolder bind the layout components to the pre-defined variables above
+            whereaboutCard = v.findViewById(R.id.whereaboutCard);
             whereaboutCardTitle = v.findViewById(R.id.whereaboutCardTitle);
             whereaboutCardNote = v.findViewById(R.id.whereaboutCardNote);
             whereaboutCardProgress = v.findViewById(R.id.whereaboutCardProgress);
@@ -91,6 +101,15 @@ public class WhereaboutAdapter extends RecyclerView.Adapter<WhereaboutAdapter.Wh
             }
             holder.whereaboutCardProgress.setText("Part " + whereabouts.get(position).getPart() + " page " + whereabouts.get(position).getProgress() + source);
         }
+
+        holder.whereaboutCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toWhereaboutDetailScreenIntent = new Intent(v.getContext(), WhereaboutDetailActivity.class);
+                toWhereaboutDetailScreenIntent.putExtra("uuid", whereabouts.get(position).getUuid());
+                v.getContext().startActivity(toWhereaboutDetailScreenIntent);
+            }
+        });
     }
 
     @Override

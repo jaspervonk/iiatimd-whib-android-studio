@@ -26,7 +26,7 @@ public class AddWhereaboutActivity extends AppCompatActivity implements View.OnC
 
         // Set actionbar title
         TextView actionbarTitle = findViewById(R.id.actionbarTitle);
-        actionbarTitle.setText("Add Whereabout");
+        actionbarTitle.setText(R.string.add_whereabout_actionbar_title);
 
         // Set OnClickListener
         ImageView toPreviousScreenButton = findViewById(R.id.actionbarBackButton);
