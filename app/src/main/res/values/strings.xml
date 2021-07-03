@@ -11,6 +11,47 @@
 
     <string name="whereabouts_title">Whereabouts</string>
 
+    <string-array name="add_whereabout_spinner_default">
+        <item>Select your whereabout...</item>
+        <item>Series</item>
+        <item>Movie</item>
+        <item>Book</item>
+    </string-array>
+    <string-array name="add_whereabout_spinner_selected">
+        <item>Series</item>
+        <item>Movie</item>
+        <item>Book</item>
+    </string-array>
+    <string name="add_whereabout_title">Add Whereabout</string>
+
+    <string name="add_whereabout_title_title">Title</string>
+    <string name="add_whereabout_part_series">Season</string>
+    <string name="add_whereabout_part_movie">Part</string>
+    <string name="add_whereabout_part_book">Part</string>
+    <string name="add_whereabout_progress_title">Progress</string>
+    <string name="add_whereabout_source_title">Source [Optional]</string>
+    <string name="add_whereabout_note_title">Note [Optional]</string>
+
+    <string name="add_whereabout_title_input_hint_series">What were you watching?</string>
+    <string name="add_whereabout_part_input_hint_series">What season are you watching?</string>
+    <string name="add_whereabout_progress_input_hint_series">What is your next episode?</string>
+    <string name="add_whereabout_source_input_hint_series">Where did you watch the series?</string>
+    <string name="add_whereabout_note_input_hint_series">What was the last thing you saw?</string>
+
+    <string name="add_whereabout_title_input_hint_movie">What were you watching?</string>
+    <string name="add_whereabout_part_input_hint_movie">What part are you watching?</string>
+    <string name="add_whereabout_progress_input_hint_movie">What time were you on?</string>
+    <string name="add_whereabout_source_input_hint_movie">Where did you watch the movie?</string>
+    <string name="add_whereabout_note_input_hint_movie">What was the last thing you saw?</string>
+
+    <string name="add_whereabout_title_input_hint_book">What were you reading?</string>
+    <string name="add_whereabout_part_input_hint_book">What part is the book?</string>
+    <string name="add_whereabout_progress_input_hint_book">What is your next page number?</string>
+    <string name="add_whereabout_source_input_hint_book">Where did you read this book?</string>
+    <string name="add_whereabout_note_input_hint_book">What was the last thing you read?</string>
+
+    <string name="add_whereabout_button">Finish</string>
+
     <string name="home_text">Home</string>
 
     <string name="reminders_text">Reminders</string>

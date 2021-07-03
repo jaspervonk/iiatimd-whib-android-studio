@@ -1,5 +1,6 @@
 package com.example.whib;
 
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -55,14 +58,13 @@ public class WhereaboutAdapter extends RecyclerView.Adapter<WhereaboutAdapter.Wh
     public void onBindViewHolder(@NonNull WhereaboutViewHolder holder, int position) {
         // Set holder content based on the content given inside the whereabouts List; using the given position
         String source = "";
-        String progress = "";
 
         // Series
         if(whereabouts.get(position).getKind().equals("Series")){
             holder.whereaboutCardTitle.setText(whereabouts.get(position).getTitle());
             holder.whereaboutCardNote.setText(whereabouts.get(position).getNote());
             // Check if there is a source
-            if(whereabouts.get(position).getSource() != ""){
+            if(!TextUtils.isEmpty(whereabouts.get(position).getSource())){
                 source = " on " + whereabouts.get(position).getSource() + " ";
             }
             holder.whereaboutCardProgress.setText("Season " + whereabouts.get(position).getPart() + " Episode " + whereabouts.get(position).getProgress() + source);
@@ -70,23 +72,24 @@ public class WhereaboutAdapter extends RecyclerView.Adapter<WhereaboutAdapter.Wh
 
         // Movie
         if(whereabouts.get(position).getKind().equals("Movie")){
-            holder.whereaboutCardTitle.setText(whereabouts.get(position).getTitle());
+            holder.whereaboutCardTitle.setText(whereabouts.get(position).getTitle() + " Part " + whereabouts.get(position).getPart());
             holder.whereaboutCardNote.setText(whereabouts.get(position).getNote());
-            if(whereabouts.get(position).getProgress() != ""){
-                progress = " at " + whereabouts.get(position).getProgress();
-            }
             // Check if there is a source
-            if(whereabouts.get(position).getSource() != ""){
+            if(!TextUtils.isEmpty(whereabouts.get(position).getSource())){
                 source = " on " + whereabouts.get(position).getSource() + " ";
             }
-            holder.whereaboutCardProgress.setText("Part " + whereabouts.get(position).getPart() + progress + source);
+            holder.whereaboutCardProgress.setText("At " + whereabouts.get(position).getProgress() + source);
         }
 
         // Book
         if(whereabouts.get(position).getKind().equals("Book")){
             holder.whereaboutCardTitle.setText(whereabouts.get(position).getTitle());
             holder.whereaboutCardNote.setText(whereabouts.get(position).getNote());
-            holder.whereaboutCardProgress.setText("Part " + whereabouts.get(position).getPart() + " page " + whereabouts.get(position).getProgress());
+            // Check if there is a source
+            if(!TextUtils.isEmpty(whereabouts.get(position).getSource())){
+                source = " on " + whereabouts.get(position).getSource() + " ";
+            }
+            holder.whereaboutCardProgress.setText("Part " + whereabouts.get(position).getPart() + " page " + whereabouts.get(position).getProgress() + source);
         }
     }
 

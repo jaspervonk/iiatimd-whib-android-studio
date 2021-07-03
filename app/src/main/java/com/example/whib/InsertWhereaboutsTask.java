@@ -12,7 +12,7 @@ public class InsertWhereaboutsTask implements Runnable {
     @Override
     public void run() {
         for(int i = 0; i < whereabouts.length; i++) {
-            db.whereaboutDAO().InsertReminder(this.whereabouts[i]);
+            db.whereaboutDAO().InsertWhereabout(this.whereabouts[i]);
         }
     }
 }

@@ -11,6 +11,6 @@ public class InsertWhereaboutTask implements Runnable {
     }
     @Override
     public void run() {
-        db.whereaboutDAO().InsertReminder(this.whereabout);
+        db.whereaboutDAO().InsertWhereabout(this.whereabout);
     }
 }

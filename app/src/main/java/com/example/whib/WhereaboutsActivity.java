@@ -44,11 +44,11 @@ public class WhereaboutsActivity extends AppCompatActivity implements View.OnCli
 
         // Make Whereabouts data
         Whereabout[] whereaboutsArray = new Whereabout[5]; //0..x-1;
-        whereaboutsArray[0] = new Whereabout(1,"Attack on titan", 4,"Eren just killed titan, Levi came to the rescue!", "Gogoanime", "5", "Series");
-        whereaboutsArray[1] = new Whereabout(2,"Dolfje", 1, "He just ate a chicken from one of the other people and they got mad", "", "124", "Book");
-        whereaboutsArray[2] = new Whereabout(3,"Kakegurui", 2, "They just finished playing with a finger guillotine", "Netflix", "2", "Series");
-        whereaboutsArray[3] = new Whereabout(4,"Hunger Games", 2,"Eric just got killed, 4 people remaining","Netflix", "1:45:16", "Movie");
-        whereaboutsArray[4] = new Whereabout(5,"Hunger Games", 3,"Looks interesting", "Netflix", "", "Movie");
+        whereaboutsArray[0] = new Whereabout("Attack on titan", 4,"Eren just killed titan, Levi came to the rescue!", "Gogoanime", "5", "Series");
+        whereaboutsArray[1] = new Whereabout("Dolfje", 1, "He just ate a chicken from one of the other people and they got mad", "", "124", "Book");
+        whereaboutsArray[2] = new Whereabout("Kakegurui", 2, "They just finished playing with a finger guillotine", "Netflix", "2", "Series");
+        whereaboutsArray[3] = new Whereabout("Hunger Games", 2,"Eric just got killed, 4 people remaining","Netflix", "1:45:16", "Movie");
+        whereaboutsArray[4] = new Whereabout("Hunger Games", 3,"Looks interesting", "Netflix", "0", "Movie");
 
         // Start a thread that adds the reminders to the database from the remindersArray
 //        new Thread(new InsertWhereaboutsTask(db, whereaboutsArray)).start();

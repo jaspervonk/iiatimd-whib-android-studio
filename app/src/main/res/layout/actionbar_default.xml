@@ -24,7 +24,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:text="Placeholder"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold" />
 

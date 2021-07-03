@@ -7,8 +7,8 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Whereabout {
 
-    @PrimaryKey
-    private int uuid;
+    @PrimaryKey(autoGenerate = true)
+    public int uuid;
 
     @ColumnInfo
     private String title;
@@ -28,8 +28,7 @@ public class Whereabout {
     @ColumnInfo
     private String kind;
 
-    public Whereabout (int uuid, String title, int part, String note, String source, String progress, String kind){
-        this.uuid = uuid;
+    public Whereabout (String title, int part, String note, String source, String progress, String kind){
         this.title = title;
         this.part = part;
         this.note = note;
@@ -60,6 +59,10 @@ public class Whereabout {
         return this.kind;
     }
 
+    public int setUuid(int uuid){
+        this.uuid = uuid;
+        return this.uuid;
+    }
     public String setTitle(String title){
         this.title = title;
         return this.title;

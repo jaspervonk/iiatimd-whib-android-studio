@@ -14,7 +14,7 @@ public interface WhereaboutDAO {
     List<Whereabout> getAll();
 
     @Insert
-    void InsertReminder(Whereabout whereabout);
+    Long InsertWhereabout(Whereabout whereabout);
 
     @Delete
     void delete(Whereabout whereabout);
