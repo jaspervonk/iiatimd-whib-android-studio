@@ -1,14 +1,19 @@
 package com.example.whib;
 
+import android.icu.text.UFormat;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 @Entity
 public class Reminder {
 
-    @PrimaryKey
-    private int uuid;
+    @PrimaryKey(autoGenerate = true)
+    public int uuid;
 
     @ColumnInfo
     private String title;
@@ -19,11 +24,18 @@ public class Reminder {
     @ColumnInfo
     private String date;
 
-    public Reminder(int uuid, String title, String description, String date) {
-        this.uuid = uuid;
+    @ColumnInfo
+    private String time;
+
+    @ColumnInfo
+    private boolean repeat;
+
+    public Reminder(String title, String description, String date, String time, boolean repeat) {
         this.title = title;
         this.description = description;
         this.date = date;
+        this.time = time;
+        this.repeat = repeat;
     }
 
     public int getUuid() {
@@ -42,6 +54,18 @@ public class Reminder {
         return this.date;
     }
 
+    public String getTime() {
+        return this.time;
+    }
+
+    public boolean getRepeat() {
+        return this.repeat;
+    }
+
+    public int setUuid(int uuid){
+        this.uuid = uuid;
+        return this.uuid;
+    }
     public String setTitle(String title) {
         this.title = title;
         return this.title;
@@ -56,4 +80,15 @@ public class Reminder {
         this.date = date;
         return this.date;
     }
+
+    public String setTime(String time) {
+        this.time = time;
+        return this.time;
+    }
+
+    public boolean setRepeat(boolean repeat) {
+        this.repeat = repeat;
+        return this.repeat;
+    }
+
 }

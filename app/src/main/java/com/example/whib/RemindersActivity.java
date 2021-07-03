@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
@@ -48,8 +50,8 @@ public class RemindersActivity extends AppCompatActivity implements View.OnClick
 
         // Make Reminders data
         Reminder[] remindersArray = new Reminder[2]; //0..x-1;
-        remindersArray[0] = new Reminder(0,"New episode aot", "Season 4 new episode", "Friday");
-        remindersArray[1] = new Reminder(1,"New episode demon slayer", "Season 2 new episode", "Thursday");
+        remindersArray[0] = new Reminder("New episode aot", "Season 4 new episode", "21/10/2021", "21:00", true);
+        remindersArray[1] = new Reminder("New episode demon slayer", "Season 2 new episode", "25/7/2021", "15:00", false);
 
         // Start a thread that adds the reminders to the database from the remindersArray
 //        new Thread(new InsertRemindersTask(db, remindersArray)).start();
