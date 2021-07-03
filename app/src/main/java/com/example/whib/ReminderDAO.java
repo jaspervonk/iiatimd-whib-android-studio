@@ -14,7 +14,7 @@ public interface ReminderDAO {
     List<Reminder> getAll();
 
     @Insert
-    void InsertReminder(Reminder reminder);
+    Long InsertReminder(Reminder reminder);
 
     @Delete
     void delete(Reminder reminder);

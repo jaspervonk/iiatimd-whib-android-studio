@@ -41,9 +41,11 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.Remind
 
     @Override
     public void onBindViewHolder(@NonNull ReminderViewHolder holder, int position) {
+        String dateTime = reminders.get(position).getDate() + " " + reminders.get(position).getTime();
+
         holder.reminderCardTitle.setText(reminders.get(position).getTitle());
         holder.reminderCardDescription.setText(reminders.get(position).getDescription());
-        holder.reminderCardConcurrence.setText(reminders.get(position).getDate());
+        holder.reminderCardConcurrence.setText(dateTime);
     }
 
     @Override
