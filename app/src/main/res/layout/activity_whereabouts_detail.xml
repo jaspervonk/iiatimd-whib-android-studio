@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -28,9 +27,23 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/placeholder_text"
+        android:inputType="textPersonName"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutTitle" />
+
+    <EditText
+        android:id="@+id/detailWhereaboutTitleEditInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:ems="10"
+        android:hint="@string/detail_whereabout_edit"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutTitle" />
@@ -46,7 +59,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.825"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutTitleInput" />
+        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutTitleEditInput" />
 
     <TextView
         android:id="@+id/detailWhereaboutPartInput"
@@ -55,9 +68,25 @@
         android:layout_marginHorizontal="20dp"
         android:ems="10"
         android:gravity="start|top"
-        android:inputType="number"
         android:hint="@string/placeholder_text"
+        android:inputType="number"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutPart" />
+
+    <EditText
+        android:id="@+id/detailWhereaboutPartEditInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/detail_whereabout_edit"
+        android:inputType="number"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +102,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutPartInput" />
+        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutPartEditInput" />
 
     <TextView
         android:id="@+id/detailWhereaboutProgressInput"
@@ -81,12 +110,26 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/placeholder_text"
+        android:inputType="textPersonName"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutProgress"/>
+        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutProgress" />
+
+    <EditText
+        android:id="@+id/detailWhereaboutProgressEditInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:ems="10"
+        android:hint="@string/detail_whereabout_edit"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutProgress" />
 
     <TextView
         android:id="@+id/detailWhereaboutSource"
@@ -98,7 +141,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutProgressInput" />
+        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutProgressEditInput" />
 
     <TextView
         android:id="@+id/detailWhereaboutSourceInput"
@@ -106,12 +149,26 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/placeholder_text"
+        android:inputType="textPersonName"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutSource"/>
+        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutSource" />
+
+    <EditText
+        android:id="@+id/detailWhereaboutSourceEditInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:ems="10"
+        android:hint="@string/detail_whereabout_edit"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutSource" />
 
     <TextView
         android:id="@+id/detailWhereaboutNote"
@@ -123,7 +180,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutSourceInput" />
+        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutSourceEditInput" />
 
     <TextView
         android:id="@+id/detailWhereaboutNoteInput"
@@ -131,11 +188,53 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/placeholder_text"
+        android:inputType="textPersonName"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutNote" />
+
+    <EditText
+        android:id="@+id/detailWhereaboutNoteEditInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:ems="10"
+        android:hint="@string/detail_whereabout_edit"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutNote" />
+
+    <Button
+        android:id="@+id/detailWhereaboutEditButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginRight="76dp"
+        android:text="@string/detail_whereabout_edit_button"
+        android:visibility="invisible"
+        app:backgroundTint="@color/green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutNoteEditInput" />
+
+    <Button
+        android:id="@+id/detailWhereaboutDeleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/detail_whereabout_delete_button"
+        android:visibility="invisible"
+        app:backgroundTint="@color/red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailWhereaboutNoteEditInput" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

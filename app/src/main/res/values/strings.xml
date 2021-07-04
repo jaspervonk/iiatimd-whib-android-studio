@@ -22,6 +22,9 @@
     <string name="detail_whereabout_progress_book">Page</string>
     <string name="detail_whereabout_source_title">Source</string>
     <string name="detail_whereabout_note_title">Note</string>
+    <string name="detail_whereabout_edit">Type here...</string>
+    <string name="detail_whereabout_edit_button">Finish</string>
+    <string name="detail_whereabout_delete_button">Remove</string>
 
 
 
@@ -60,7 +63,7 @@
     <string name="add_whereabout_progress_input_hint_book">What is your next page number?</string>
     <string name="add_whereabout_source_input_hint_book">Where did you read this book?</string>
     <string name="add_whereabout_note_input_hint_book">What was the last thing you read?</string>
-    <string name="add_whereabout_button">Finish</string>
+    <string name="add_whereabout_button">Add</string>
 
     <string name="reminders_text">Reminders</string>
     <string name="add_reminder_title_title">Title</string>
@@ -68,7 +71,7 @@
     <string name="add_reminder_description_title">Description</string>
     <string name="add_reminder_description_input">What is coming up?</string>
     <string name="add_reminder_check_box">Repeat</string>
-    <string name="add_reminder_button">Finish</string>
+    <string name="add_reminder_button">Add</string>
 
     <string name="placeholder_text">Placeholder</string>
 

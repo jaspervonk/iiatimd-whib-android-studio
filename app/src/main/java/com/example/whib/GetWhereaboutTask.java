@@ -1,6 +1,7 @@
 package com.example.whib;
 
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class GetWhereaboutTask implements Runnable {
@@ -47,10 +48,22 @@ public class GetWhereaboutTask implements Runnable {
         TextView detailWhereaboutSourceInput = v.findViewById(R.id.detailWhereaboutSourceInput);
         TextView detailWhereaboutNoteInput = v.findViewById(R.id.detailWhereaboutNoteInput);
 
+        EditText detailWhereaboutTitleEditInput = v.findViewById(R.id.detailWhereaboutTitleEditInput);
+        EditText detailWhereaboutPartEditInput = v.findViewById(R.id.detailWhereaboutPartEditInput);
+        EditText detailWhereaboutProgressEditInput = v.findViewById(R.id.detailWhereaboutProgressEditInput);
+        EditText detailWhereaboutSourceEditInput = v.findViewById(R.id.detailWhereaboutSourceEditInput);
+        EditText detailWhereaboutNoteEditInput = v.findViewById(R.id.detailWhereaboutNoteEditInput);
+
         detailWhereaboutTitleInput.setText(whereabout.getTitle());
         detailWhereaboutPartInput.setText(String.valueOf(whereabout.getPart()));
         detailWhereaboutProgressInput.setText(whereabout.getProgress());
         detailWhereaboutSourceInput.setText(whereabout.getSource());
         detailWhereaboutNoteInput.setText(whereabout.getNote());
+
+        detailWhereaboutTitleEditInput.setText(whereabout.getTitle());
+        detailWhereaboutPartEditInput.setText(String.valueOf(whereabout.getPart()));
+        detailWhereaboutProgressEditInput.setText(whereabout.getProgress());
+        detailWhereaboutSourceEditInput.setText(whereabout.getSource());
+        detailWhereaboutNoteEditInput.setText(whereabout.getNote());
     }
 }

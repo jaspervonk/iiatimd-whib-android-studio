@@ -73,7 +73,7 @@ public class AddWhereaboutActivity extends AppCompatActivity implements View.OnC
                 Spinner whereaboutSpinner = findViewById(R.id.addWhereaboutFormSpinner);
                 kind = whereaboutSpinner.getSelectedItem().toString();
 
-                if(TextUtils.isEmpty(title) || TextUtils.isEmpty(progress) || TextUtils.isEmpty(kind) || part > 0 ){
+                if(TextUtils.isEmpty(title) || TextUtils.isEmpty(progress) || TextUtils.isEmpty(kind) || part == 0 ){
                     Toast.makeText(getBaseContext(), "Please fill in all required fields", Toast.LENGTH_LONG).show();
                 }
                 else{
@@ -87,8 +87,6 @@ public class AddWhereaboutActivity extends AppCompatActivity implements View.OnC
                     Intent toWhereaboutsScreenIntent = new Intent(this, WhereaboutsActivity.class);
                     startActivity(toWhereaboutsScreenIntent);
                 }
-
-
         }
     }
 
