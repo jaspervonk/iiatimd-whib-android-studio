@@ -21,6 +21,7 @@
         <activity android:name=".WhereaboutDetailActivity" />
         <activity android:name=".AddWhereaboutActivity" />
         <activity android:name=".RemindersActivity" />
+        <activity android:name=".ReminderDetailActivity" />
         <activity android:name=".AddReminderActivity" />
         <activity android:name=".TestActivity" />
     </application>

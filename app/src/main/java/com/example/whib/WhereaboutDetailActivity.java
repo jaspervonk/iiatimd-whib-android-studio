@@ -64,7 +64,7 @@ public class WhereaboutDetailActivity extends AppCompatActivity implements View.
                 break;
             case R.id.detailWhereaboutEditButton:
                 new Thread(new UpdateWhereaboutTask(db, uuid, findViewById(android.R.id.content))).start();
-                Toast.makeText(getBaseContext(), "Whereabout edited!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), "Whereabout removed!", Toast.LENGTH_LONG).show();
                 toggleEditWhereaboutForm();
             case R.id.detailWhereaboutDeleteButton:
                 new Thread(new DeleteWhereaboutTask(db, uuid)).start();

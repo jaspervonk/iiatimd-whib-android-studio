@@ -15,7 +15,7 @@ public class DeleteWhereaboutTask implements Runnable{
         @Override
         public void run() {
             // Get whereabout
-            Whereabout whereabout = db.whereaboutDAO().getAll().get(this.uuid - 1);
+            Whereabout whereabout = db.whereaboutDAO().GetWhereabout(this.uuid);
             db.whereaboutDAO().DeleteWhereabout(whereabout);
         }
 }

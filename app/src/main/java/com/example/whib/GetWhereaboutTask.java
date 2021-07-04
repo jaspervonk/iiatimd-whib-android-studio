@@ -19,7 +19,7 @@ public class GetWhereaboutTask implements Runnable {
     @Override
     public void run() {
         // Get whereabout
-        Whereabout whereabout = db.whereaboutDAO().getAll().get(this.uuid-1);
+        Whereabout whereabout = db.whereaboutDAO().GetWhereabout(this.uuid);
 
         // Set the right Titles based on the kind of whereabout
         String kind = whereabout.getKind();

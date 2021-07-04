@@ -65,13 +65,22 @@
     <string name="add_whereabout_note_input_hint_book">What was the last thing you read?</string>
     <string name="add_whereabout_button">Add</string>
 
+
     <string name="reminders_text">Reminders</string>
+
+    <string name="detail_reminder_title">Title</string>
+    <string name="detail_reminder_description">Description</string>
+    <string name="detail_reminder_date">Date</string>
+    <string name="detail_reminder_time">Time</string>
+    <string name="detail_reminder_repeat">Repeat</string>
+
     <string name="add_reminder_title_title">Title</string>
     <string name="add_reminder_title_input">What do you want to be reminded of?</string>
     <string name="add_reminder_description_title">Description</string>
     <string name="add_reminder_description_input">What is coming up?</string>
     <string name="add_reminder_check_box">Repeat</string>
     <string name="add_reminder_button">Add</string>
+
 
     <string name="placeholder_text">Placeholder</string>
 

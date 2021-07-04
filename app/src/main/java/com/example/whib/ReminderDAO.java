@@ -13,10 +13,13 @@ public interface ReminderDAO {
     @Query("SELECT * FROM reminder")
     List<Reminder> getAll();
 
+    @Query("SELECT * FROM reminder WHERE uuid=:uuid ")
+    Reminder GetReminder(int uuid);
+
     @Insert
     Long InsertReminder(Reminder reminder);
 
     @Delete
-    void delete(Reminder reminder);
+    void DeleteReminder(Reminder reminder);
 
 }

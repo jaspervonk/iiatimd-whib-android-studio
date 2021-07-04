@@ -14,6 +14,9 @@ public interface WhereaboutDAO {
     @Query("SELECT * FROM whereabout")
     List<Whereabout> getAll();
 
+    @Query("SELECT * FROM whereabout WHERE uuid=:uuid ")
+    Whereabout GetWhereabout(int uuid);
+
     @Insert
     Long InsertWhereabout(Whereabout whereabout);
 
