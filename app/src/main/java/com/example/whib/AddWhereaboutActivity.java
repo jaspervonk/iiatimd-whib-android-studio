@@ -51,7 +51,7 @@ public class AddWhereaboutActivity extends AppCompatActivity implements View.OnC
                 break;
             case R.id.addWhereaboutButton:
                 String title = "";
-                int part = 1;
+                int part = 0;
                 String progress = "";
                 String source = "";
                 String note = "";
@@ -73,7 +73,7 @@ public class AddWhereaboutActivity extends AppCompatActivity implements View.OnC
                 Spinner whereaboutSpinner = findViewById(R.id.addWhereaboutFormSpinner);
                 kind = whereaboutSpinner.getSelectedItem().toString();
 
-                if(TextUtils.isEmpty(title) || TextUtils.isEmpty(progress) || TextUtils.isEmpty(kind)){
+                if(TextUtils.isEmpty(title) || TextUtils.isEmpty(progress) || TextUtils.isEmpty(kind) || part > 0 ){
                     Toast.makeText(getBaseContext(), "Please fill in all required fields", Toast.LENGTH_LONG).show();
                 }
                 else{
