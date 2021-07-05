@@ -1,4 +1,4 @@
-package com.example.whib;
+package com.iatjt.whib;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

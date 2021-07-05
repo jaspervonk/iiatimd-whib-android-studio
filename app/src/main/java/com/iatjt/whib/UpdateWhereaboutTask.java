@@ -19,7 +19,7 @@ public class UpdateWhereaboutTask implements Runnable {
     @Override
     public void run() {
         // Get whereabout
-        Whereabout whereabout = db.whereaboutDAO().getAll().get(this.uuid - 1);
+        Whereabout whereabout = db.whereaboutDAO().GetWhereabout(this.uuid);
 
         EditText detailWhereaboutTitleEditInput = v.findViewById(R.id.detailWhereaboutTitleEditInput);
         EditText detailWhereaboutPartEditInput = v.findViewById(R.id.detailWhereaboutPartEditInput);

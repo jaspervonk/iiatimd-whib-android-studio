@@ -1,4 +1,4 @@
-package com.example.whib;
+package com.iatjt.whib;
 
 import androidx.room.Dao;
 import androidx.room.Delete;

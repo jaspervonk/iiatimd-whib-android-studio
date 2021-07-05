@@ -2,6 +2,7 @@ package com.iatjt.whib;
 
 import android.content.Intent;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -111,6 +112,9 @@ public class WhereaboutAdapter extends RecyclerView.Adapter<WhereaboutAdapter.Wh
             @Override
             public void onClick(View v) {
                 Intent toWhereaboutDetailScreenIntent = new Intent(v.getContext(), WhereaboutDetailActivity.class);
+
+                Log.d("ONCLICK ADAPTER", "onClick: " + whereabouts.get(position).getUuid());
+
                 toWhereaboutDetailScreenIntent.putExtra("uuid", whereabouts.get(position).getUuid());
                 v.getContext().startActivity(toWhereaboutDetailScreenIntent);
             }

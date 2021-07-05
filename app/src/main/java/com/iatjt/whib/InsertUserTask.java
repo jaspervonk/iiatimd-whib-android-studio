@@ -1,4 +1,4 @@
-package com.example.whib;
+package com.iatjt.whib;
 
 public class InsertUserTask implements Runnable {
 
