@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "959828523228",
+    "project_id": "whib-9f452",
+    "storage_bucket": "whib-9f452.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959828523228:android:195faf05f2a041b2791c19",
+        "android_client_info": {
+          "package_name": "com.iatjt.whib"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959828523228-137re03k6o9pds5ve9sfbtp36kqusak5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZpG_cv319LEwG-XlsWDH4fYKr7UeHsns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959828523228-137re03k6o9pds5ve9sfbtp36kqusak5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

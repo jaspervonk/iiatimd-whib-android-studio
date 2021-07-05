@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.whib">
+    package="com.iatjt.whib">
 
     <application
         android:allowBackup="true"
@@ -9,21 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Whib">
-        <activity android:name=".WelcomeActivity">
+        <activity android:name="com.iatjt.whib.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".WhereaboutsActivity" />
-        <activity android:name=".WhereaboutDetailActivity" />
-        <activity android:name=".AddWhereaboutActivity" />
-        <activity android:name=".RemindersActivity" />
-        <activity android:name=".ReminderDetailActivity" />
-        <activity android:name=".AddReminderActivity" />
-        <activity android:name=".TestActivity" />
+        <activity android:name="com.iatjt.whib.HomeActivity" />
+        <activity android:name="com.iatjt.whib.WhereaboutsActivity" />
+        <activity android:name="com.iatjt.whib.WhereaboutDetailActivity" />
+        <activity android:name="com.iatjt.whib.AddWhereaboutActivity" />
+        <activity android:name="com.iatjt.whib.RemindersActivity" />
+        <activity android:name="com.iatjt.whib.ReminderDetailActivity" />
+        <activity android:name="com.iatjt.whib.AddReminderActivity" />
+        <activity android:name="com.iatjt.whib.TestActivity" />
+        <service android:name=".MyFirebaseMessagingService"
+                android:exported="false">
+                <intent-filter>
+                    <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                </intent-filter>
+        </service>
+        <receiver android:name=".ReminderBroadcast" />
     </application>
 
 </manifest>
