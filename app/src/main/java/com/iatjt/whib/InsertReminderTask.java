@@ -15,15 +15,18 @@ public class InsertReminderTask implements Runnable {
     AppDatabase db;
     Reminder reminder;
     Context context;
+    private AddReminderActivity callback;
 
-    public InsertReminderTask(AppDatabase db, Reminder reminder ) {
+    public InsertReminderTask(AppDatabase db, Reminder reminder,  AddReminderActivity ra) {
         this.db = db;
         this.reminder = reminder;
+        this.callback = ra;
     }
     @Override
     public void run() {
         db.reminderDAO().InsertReminder(this.reminder);
-        Log.d("GEEEEEEEEF", "" + this.reminder.uuid);
+
+        this.callback.reminderInsertedCallBack(true);
     }
 
 }

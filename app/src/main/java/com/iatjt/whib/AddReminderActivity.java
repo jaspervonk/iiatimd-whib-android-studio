@@ -42,6 +42,15 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
     String time = "";
     boolean repeat = false;
     Date dateDay = null;
+    GetLastReminderTask getLastReminderTask;
+
+    public void reminderInsertedCallBack (boolean reminderInsert) {
+        if(reminderInsert) {
+            AppDatabase db = AppDatabase.getInstance(getApplicationContext());
+            getLastReminderTask = new GetLastReminderTask(db);
+            new Thread(getLastReminderTask).start();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -140,11 +149,8 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
                     Reminder newReminder = new Reminder(title, description, date, time, repeat);
 
                     AppDatabase db = AppDatabase.getInstance(getApplicationContext());
-                    InsertReminderTask insertReminderTask = new InsertReminderTask(db, newReminder);
+                    InsertReminderTask insertReminderTask = new InsertReminderTask(db, newReminder, this);
                     new Thread(insertReminderTask).start();
-
-                    GetLastReminderTask getLastReminderTask = new GetLastReminderTask(db);
-                    new Thread(getLastReminderTask).start();
 
                     Toast.makeText(getBaseContext(),  "Reminder added!", Toast.LENGTH_LONG).show();
 
@@ -158,7 +164,8 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
                     intent.putExtra("title", newReminder.getTitle());
                     intent.putExtra("description", newReminder.getDescription());
                     intent.putExtra("reminderId",getLastReminderTask.reminderId);
-                    intent.putExtra("checkBox", repeat);
+                    intent.putExtra("checkBox", String.valueOf(repeat));
+                    intent.putExtra("previousTime", selectedDate);
                     long currentTime = System.currentTimeMillis();
                     int unique = (int) currentTime;
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), unique , intent, PendingIntent.FLAG_UPDATE_CURRENT);

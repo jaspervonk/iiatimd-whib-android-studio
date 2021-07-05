@@ -9,6 +9,8 @@ import android.util.Log;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import java.text.SimpleDateFormat;
+
 public class ReminderBroadcast extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -35,16 +37,23 @@ public class ReminderBroadcast extends BroadcastReceiver {
         notificationManager.notify(200, notificationBuilder.build());
 
         String checkBox = intent.getStringExtra("checkBox");
-        Log.d("CHECKBOX", "" + checkBox);
         int reminderId = intent.getIntExtra("reminderId", 0);
+        long previousTime = intent.getLongExtra("previousTime", 0);
+        long weekMilliseconds = 7 * 86400000;
+        long nextTime = previousTime + weekMilliseconds;
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String date = formatter.format(nextTime);
 
-        Log.d("checkbox" , "" + checkBox);
-        Log.d("USERID" , "" + reminderId);
         AppDatabase db = AppDatabase.getInstance(context);
-        new Thread(new DeleteReminderTask(db, reminderId)).start();
-//
-//        if(checkBox.equals("false")) {
-//        }
+
+        Log.d("REMINDER ID BEFORE", "" + reminderId);
+        if(checkBox.equals("false")) {
+            new Thread(new DeleteReminderTask(db, reminderId)).start();
+        } else {
+            Log.d("REMINDER ID AFTER", "" + reminderId);
+            // Change reminder date and time to next alarm
+            new Thread(new UpdateReminderTask(db, reminderId, date)).start();
+        }
 
     }
 }

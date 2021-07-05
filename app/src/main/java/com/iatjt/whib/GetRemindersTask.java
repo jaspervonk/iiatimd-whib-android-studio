@@ -4,6 +4,7 @@ import android.util.Log;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Collections;
 import java.util.List;
 
 public class GetRemindersTask implements Runnable {
@@ -24,6 +25,7 @@ public class GetRemindersTask implements Runnable {
         this.reminders = db.reminderDAO().getAll();
 
         // Make recyclerViewAdapter using the database Data
+        Collections.reverse(this.reminders);
         recyclerViewAdapter = new ReminderAdapter(this.reminders);
         recyclerView.setAdapter(recyclerViewAdapter);
     }
