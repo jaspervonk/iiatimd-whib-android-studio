@@ -4,12 +4,21 @@
     <string name="button_continue">Continue</string>
     <string name="button_whereabouts">Whereabouts</string>
     <string name="button_reminders">Reminders</string>
+    <string name="button_register">Get Started</string>
 
     <string name="welcome_text">Welcome to WHIB!</string>
-    <string name="welcome_greeting">Hello!</string>
-    <string name="welcome_message">So, where have you been?</string>
+    <string name="welcome_message">Lets get you setup!</string>
+    <string name="register_input">What is your name?</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="welcome_back_message">So, where have you been?</string>
+
 
     <string name="whereabouts_title">Whereabouts</string>
+    <string-array name="whereabouts_spinner">
+        <item>Series</item>
+        <item>Movie</item>
+        <item>Book</item>
+    </string-array>
 
 
     <string name="detail_whereabout_title">Details</string>
@@ -82,7 +91,7 @@
     <string name="add_reminder_button">Add</string>
 
 
-    <string name="placeholder_text">Placeholder</string>
+    <string name="placeholder_text">None</string>
 
     <string name="test_text">You have reached the test page :D</string>
 </resources>
