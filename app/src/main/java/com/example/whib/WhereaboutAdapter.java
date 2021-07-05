@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,16 +18,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class WhereaboutAdapter extends RecyclerView.Adapter<WhereaboutAdapter.WhereaboutViewHolder> implements View.OnClickListener {
+public class WhereaboutAdapter extends RecyclerView.Adapter<WhereaboutAdapter.WhereaboutViewHolder> implements View.OnClickListener, Filterable {
 
     // Define whereabouts array
     private List<Whereabout> whereabouts;
+    // Define whereaboutsFull array to use as filterable array
+    private List<Whereabout> whereaboutsFull;
 
     // When creating a new adapter; bind whereabouts array to this class
     public WhereaboutAdapter(List<Whereabout> whereabouts){
         this.whereabouts = whereabouts;
+        // Fill the whereaboutsFull array with a copy of the original array
+        whereaboutsFull = new ArrayList<>(whereabouts);
     }
 
     @Override
@@ -116,4 +123,54 @@ public class WhereaboutAdapter extends RecyclerView.Adapter<WhereaboutAdapter.Wh
     public int getItemCount() {
         return whereabouts.size();
     }
+
+    // Filterable
+    @Override
+    public Filter getFilter() {
+        return whereaboutsFilter;
+    }
+
+    private Filter whereaboutsFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            // Make a new filteredList to put in all the items that passed the constraints
+            List<Whereabout> filteredList = new ArrayList<>();
+
+            // If there is no constraint; give all results (whereaboutsFull)
+            if(constraint == null || constraint.length() == 0){
+                filteredList.addAll(whereaboutsFull);
+            }
+            // If there were constraints
+            else {
+                // Get the filterText
+                String filterPattern = constraint.toString();
+                Log.d("performFiltering", "Check everything with: " + constraint.toString());
+
+                // Go through all Whereabouts and only add the ones to the filteredList that passed the constraints
+                for (Whereabout item : whereaboutsFull) {
+                    Log.d("performFiltering", item.getUuid() + " returns " + Boolean.toString(item.getKind().contains(filterPattern)));
+                    if (item.getKind().contains(filterPattern)) {
+                        Log.d( "performFiltering", "adding: " + item.getUuid());
+                        filteredList.add(item);
+                    }
+                }
+            }
+
+            // Save results in a FilterResults object
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            Log.d("performFiltering", "Finished filtering, returning results");
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            whereabouts.clear();
+            whereabouts.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
+
+
 }
