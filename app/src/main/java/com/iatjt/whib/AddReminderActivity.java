@@ -26,7 +26,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.RemoteMessage;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.util.Calendar;
 import java.util.Date;
 
 import static androidx.core.content.ContextCompat.getSystemService;
@@ -36,6 +41,7 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
     int Minutes = 0;
     String time = "";
     boolean repeat = false;
+    Date dateDay = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,8 +109,22 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
                 //date
                 CalendarView calendarView = findViewById(R.id.reminderCalendarView);
                 long selectedDate = calendarView.getDate();
-                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyy");
+                Log.d("SELECTED DATE", "" + selectedDate);
+                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                 date = formatter.format(selectedDate);
+
+                try {
+                    dateDay = new SimpleDateFormat("dd/MM/yyyy").parse(date);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                long dateInMilliseconds = dateDay.getTime();
+
+                //time
+                long milliHours = Hours * 3600000;
+                long milliMinutes = Minutes * 60000;
+                long triggerTime = dateInMilliseconds + milliHours + milliMinutes;
 
                 //checkbox
                 CheckBox checkBox = findViewById(R.id.reminderCheckBox);
@@ -136,10 +156,13 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), unique , intent, PendingIntent.FLAG_UPDATE_CURRENT);
                     AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
-                    long timeAtButtonClick = System.currentTimeMillis();
-                    long tenSecondsinMillis = 1000 * 30;
-                    long triggerTime = timeAtButtonClick + tenSecondsinMillis;
+//                    long timeAtButtonClick = System.currentTimeMillis();
+//                    long tenSecondsinMillis = 1000 * 30;
+//                    long triggerTime = timeAtButtonClick + tenSecondsinMillis;
 
+                    Log.d("TIME", "" + Calendar.getInstance().getTimeInMillis());
+                    Log.d("TIME", "" + dateInMilliseconds);
+                    Log.d("TRIGGERTIME", "" + triggerTime);
                     alarmManager.set(AlarmManager.RTC_WAKEUP, triggerTime, pendingIntent);
                 }
 

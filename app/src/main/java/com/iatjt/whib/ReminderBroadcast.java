@@ -1,5 +1,6 @@
 package com.iatjt.whib;
 
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +13,7 @@ public class ReminderBroadcast extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 //        int uuid = intent.getIntExtra("uuid");
+        Intent onClickIntent = new Intent(context, RemindersActivity.class);
         String title = intent.getStringExtra("title");
         String description = intent.getStringExtra("description");
         Log.d("received", "message received at " + System.currentTimeMillis() + title);
@@ -20,6 +22,12 @@ public class ReminderBroadcast extends BroadcastReceiver {
                 .setContentText(description)
                 .setSmallIcon(R.mipmap.ic_logo)
                 .setAutoCancel(true)
+                .setContentIntent(PendingIntent.getActivity(
+                        context,
+                        0,
+                        onClickIntent,
+                        0
+                ))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
