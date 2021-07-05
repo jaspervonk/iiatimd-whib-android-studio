@@ -129,7 +129,10 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
                 //checkbox
                 CheckBox checkBox = findViewById(R.id.reminderCheckBox);
                 if(checkBox.isChecked()) {
-                    repeat = true;                }
+                    repeat = true;
+                }else {
+                    repeat = false;
+                }
 
                 if(TextUtils.isEmpty(title) || TextUtils.isEmpty(description) || TextUtils.isEmpty(date) || TextUtils.isEmpty(time)){
                     Toast.makeText(getBaseContext(),  "Please fill in all required fields", Toast.LENGTH_LONG).show();
@@ -139,6 +142,9 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
                     AppDatabase db = AppDatabase.getInstance(getApplicationContext());
                     InsertReminderTask insertReminderTask = new InsertReminderTask(db, newReminder);
                     new Thread(insertReminderTask).start();
+
+                    GetLastReminderTask getLastReminderTask = new GetLastReminderTask(db);
+                    new Thread(getLastReminderTask).start();
 
                     Toast.makeText(getBaseContext(),  "Reminder added!", Toast.LENGTH_LONG).show();
 
@@ -151,19 +157,19 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
                     intent.setData(Uri.parse("myalarm:" + System.currentTimeMillis()));
                     intent.putExtra("title", newReminder.getTitle());
                     intent.putExtra("description", newReminder.getDescription());
+                    intent.putExtra("reminderId",getLastReminderTask.reminderId);
+                    intent.putExtra("checkBox", repeat);
                     long currentTime = System.currentTimeMillis();
                     int unique = (int) currentTime;
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), unique , intent, PendingIntent.FLAG_UPDATE_CURRENT);
                     AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
-//                    long timeAtButtonClick = System.currentTimeMillis();
-//                    long tenSecondsinMillis = 1000 * 30;
-//                    long triggerTime = timeAtButtonClick + tenSecondsinMillis;
-
-                    Log.d("TIME", "" + Calendar.getInstance().getTimeInMillis());
-                    Log.d("TIME", "" + dateInMilliseconds);
-                    Log.d("TRIGGERTIME", "" + triggerTime);
-                    alarmManager.set(AlarmManager.RTC_WAKEUP, triggerTime, pendingIntent);
+                    int interval = 7 * 86400000;
+                    if(checkBox.equals(true)) {
+                        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, triggerTime, interval, pendingIntent);
+                    }else {
+                        alarmManager.set(AlarmManager.RTC_WAKEUP, triggerTime, pendingIntent);
+                    }
                 }
 
                 break;

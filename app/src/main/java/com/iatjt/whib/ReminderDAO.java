@@ -16,6 +16,9 @@ public interface ReminderDAO {
     @Query("SELECT * FROM reminder WHERE uuid=:uuid ")
     Reminder GetReminder(int uuid);
 
+    @Query("SELECT * FROM reminder WHERE uuid=(SELECT max(uuid) FROM reminder)")
+    Reminder GetLastReminder();
+
     @Insert
     Long InsertReminder(Reminder reminder);
 

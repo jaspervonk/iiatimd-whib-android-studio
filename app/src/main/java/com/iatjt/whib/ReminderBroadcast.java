@@ -34,8 +34,17 @@ public class ReminderBroadcast extends BroadcastReceiver {
 
         notificationManager.notify(200, notificationBuilder.build());
 
-//        AppDatabase db = AppDatabase.getInstance(context);
-//        new Thread(new InsertReminderTask(db, newReminder).start();
+        String checkBox = intent.getStringExtra("checkBox");
+        Log.d("CHECKBOX", "" + checkBox);
+        int reminderId = intent.getIntExtra("reminderId", 0);
+
+        Log.d("checkbox" , "" + checkBox);
+        Log.d("USERID" , "" + reminderId);
+        AppDatabase db = AppDatabase.getInstance(context);
+        new Thread(new DeleteReminderTask(db, reminderId)).start();
+//
+//        if(checkBox.equals("false")) {
+//        }
 
     }
 }
