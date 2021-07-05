@@ -101,7 +101,7 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
                 } else {
                     // Make API Call for a JWT Token
                     // Define API link
-                    final String URL = "http://10.0.2.2:8000/api/register/" + user.getName();
+                    final String URL = "https://warm-forest-85250.herokuapp.com/api/register/" + addUserFormName.getText().toString();
 
                     StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
                             new Response.Listener<String>() {

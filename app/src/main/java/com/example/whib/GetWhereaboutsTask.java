@@ -5,6 +5,8 @@ import android.util.Log;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class GetWhereaboutsTask implements Runnable {
@@ -30,6 +32,7 @@ public class GetWhereaboutsTask implements Runnable {
         Log.d("whereaboutTask", "" + this.whereabouts.size());
 
         // Make recyclerViewAdapter using the database Data
+        Collections.reverse(this.whereabouts);
         recyclerViewAdapter = new WhereaboutAdapter(this.whereabouts);
         recyclerView.setAdapter(recyclerViewAdapter);
     }

@@ -6,7 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Reminder.class, Whereabout.class, User.class}, version = 30)
+@Database(entities = {Reminder.class, Whereabout.class, User.class}, version = 32)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract ReminderDAO reminderDAO();
     public abstract WhereaboutDAO whereaboutDAO();
